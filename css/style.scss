@@ -1,0 +1,235 @@
+@import "helpers";
+@import "zindex"; //created a zindex map to easily reference and organize content hierachy 
+
+
+/*Font Styling*/
+
+body, h3{
+  font-family: 'Open Sans', sans-serif;
+  font-family: url()
+}
+
+h1, h2, h4{
+  font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+    font-family: Telefon;
+    src: url(..fonts/telefon-ot/telefon-normal.otf);
+}
+
+a, a:hover{
+  @extend %hover-pointer;  
+}
+
+/*Container Styling*/
+.container {
+  max-width:970px;
+  margin: 0 auto;
+}
+/*Head*/
+#edso{
+    text-transform: uppercase;
+}
+
+
+/*Header*/
+
+form{
+    width: 600px;
+    margin: 0px auto;
+    padding: 20px 0px 0px;
+}
+
+#typed-strings{
+    color:black;
+}
+
+#whatif {
+    @extend %footer-style;
+    text-align: center;
+    font-weight: 600;
+    border-radius: .75px;
+    padding: 0px 10px;
+    border: 1px $yosemite-rock;
+    box-shadow: 2px 2px 10px $yosemite-rock;
+    }
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+header{
+  .headerimage{
+  position:relative;
+  background: url(../img/header-image-1.jpg)no-repeat center center fixed;
+  background-size: cover;
+  height: 680px;
+  }
+
+  .layer {
+    @extend %layer-style;
+    }
+
+   h1{
+      @extend %header-style; 
+      font-family: Telefon; 
+    }
+   
+   h3{
+      @extend %subheader-style;
+    }
+
+    .logo{
+      position: fixed;
+      top:80px;
+      left: 80px;
+      bottom: 80px;
+      width: 60px;
+        
+        img{
+          width:100%;
+          box-shadow: -2px -2px #fff;
+          @extend %hover-pointer;
+        }
+
+    }
+
+    .menu-icon{
+      position: fixed;
+      top:80px;
+      right: 80px;
+      bottom: 80px;
+      width: 60px;
+
+        img{
+          width: 100%;
+          box-shadow: 2px 2px $sanfran-red;
+          background-color: #fff;
+          @extend %hover-pointer;
+            
+            &[alt]{
+                font-size: 20px;
+                @extend %header-style;
+            } 
+
+        }
+    }
+}
+
+/*Menu*/
+.menuoff{
+display: none;
+
+  .backgroundlayer{
+    background: $yosemite-rock;
+  }
+
+}
+
+.navigation-list ul{
+  list-style: none;
+  float: right;
+
+}    
+
+.navigation-list ul li{
+  display: inline-block;
+}
+
+/*Support Slides*/
+.headerWrapper{
+    @extend %banner;
+}
+
+.support-slide{
+    height: 680px;
+
+    .layer {
+    @extend %layer-style;
+    }
+
+    h2{
+      @extend %header-style;  
+    }
+
+    h3{
+        @extend %subheader-style;
+    }
+}
+
+.slide1{
+  background: url(../img/header-image-2.png)no-repeat center center fixed;
+  background-size: cover;
+  
+}
+  
+.slide2{
+  background: url(../img/beautiful.png)no-repeat center center fixed;
+  background-size: cover;
+  
+}
+
+
+/*Supporting Content*/
+
+.support-content{
+    padding:80px;
+    text-align: center;
+
+    .backtop {
+      position: fixed;
+      bottom: 80px;
+      right: 60px;
+      display: block;
+      float: right;
+      text-align: left;
+        span{
+            @extend %backtop-style;
+        }
+
+    }
+
+}
+
+/*Footer*/
+
+footer{
+  background-color: $so-cal-footer;
+  height:156px;
+  text-align: center;
+
+  .siteInfo{
+    padding: 64px 32px;
+  }
+
+  .site-name, .site-address, .site-phone, .site-email{
+    @extend %footer-style;
+    margin: 0px 10px;
+  }
+}
+
+
+
+
+
+
+
